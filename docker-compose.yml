@@ -1,0 +1,19 @@
+services:
+  nats-server:
+    image: nats:latest
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+
+  ugimart-media-ms:
+    container_name: ugimart-media-ms
+    image: postgres:latest
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=mediadb-ms
+      - NATS_SERVERS=nats://nats-server:4222
