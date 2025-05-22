@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+# Credenciales de Drive
+src/main/resources/credentials.json
+tokens/

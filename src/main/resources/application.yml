@@ -1,3 +1,16 @@
 spring:
   application:
     name: media-ms
+  cloud:
+    config:
+      enabled: false
+    discovery:
+        enabled: false
+    import-check:
+      enabled: false
+# Configuración de Google Drive
+google:
+  credentials:
+    file: credentials.json
+  tokens:
+    directory: tokens
